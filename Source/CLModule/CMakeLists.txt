@@ -14,6 +14,9 @@ target_sources(${MODULE_NAME}
         Private/Reader/ReaderBase.h
         Private/Reader/CLReader/CLReader.h
         Private/Reader/CLReader/CLReader.cpp
+        # Tokenizer
+        Private/Tokenizer/CLTokenizer.h
+        Private/Tokenizer/CLTokenizer.cpp
 )
 
 target_include_directories(${MODULE_NAME}
@@ -21,4 +24,5 @@ target_include_directories(${MODULE_NAME}
         PRIVATE Private
         PRIVATE Private/Reader
         PRIVATE Private/Reader/CLReader
+        PRIVATE Private/Tokenizer
 )

@@ -1,10 +1,10 @@
 module;
 
+#include "CLTokenizer.h"
 #include "ReaderBase.h"
 #include <memory>
 
 export module CLModule;
-
 
 /*
  *	Composition root class for all classes in CLModule
@@ -23,6 +23,7 @@ public:
 private:
 	//-Internal components-------------------------
 	std::unique_ptr<IReaderBase> _input_reader;
+	std::unique_ptr<CLTokenizer> _tokenizer;
 
 	//-Out Ports ---------------------------------
 	// TODO add out port

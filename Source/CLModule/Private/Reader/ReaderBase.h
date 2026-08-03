@@ -13,5 +13,5 @@ public:
 
 	//-Methods-------------------------------------
 public:
-	virtual std::string read_input() = 0;
+	[[nodiscard]] virtual std::string read_input() = 0;
 };

@@ -13,4 +13,13 @@ target_link_libraries(Tests
         PRIVATE
         GTest::gtest
         GTest::gtest_main
+        CLModule
 )
+
+target_include_directories(Tests
+        PRIVATE
+        ${CMAKE_SOURCE_DIR}/Source/CLModule/Private
+        ${CMAKE_SOURCE_DIR}/Source/CLModule/Private/Tokenizer
+)
+
+add_subdirectory(CLModuleTests)
