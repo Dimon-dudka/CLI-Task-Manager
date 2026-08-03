@@ -27,12 +27,9 @@ echo "[CLI-Task-Manager] Build type: ${CONAN_BUILD_TYPE}"
 
 mkdir -p "${BUILD_DIR}"
 
-echo "[CLI-Task-Manager] Detecting Conan profile..."
-conan profile detect --force
-
 echo "[CLI-Task-Manager] Installing dependencies..."
 
-echo conan install "${PROJECT_ROOT}" \
+conan install "${PROJECT_ROOT}" \
     --output-folder="${BUILD_DIR}" \
     --build=missing \
     -s build_type="${CONAN_BUILD_TYPE}"

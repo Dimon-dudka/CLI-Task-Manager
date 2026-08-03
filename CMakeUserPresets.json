@@ -4,7 +4,6 @@
         "conan": {}
     },
     "include": [
-        "Builds/conan/build/Debug/generators/CMakePresets.json",
-        "Builds/conan/build/Release/generators/CMakePresets.json"
+        "Builds/conan/build/Debug/generators/CMakePresets.json"
     ]
 }
