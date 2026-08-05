@@ -2,14 +2,19 @@
 #include <iostream>
 #include <memory>
 
-import CLModule;
+import CLInputModule;
+import CLParserModule;
+//import CLParserAPI;
 
 void CLApplication::start()
 try
 {
-	//TODO add out port for reader
-	CLComponent _cl_component;
-	_cl_component.handle_input();
+	const CLParserModule _cl_parser;
+
+	const auto tmp = _cl_parser.get_input_port();
+	CLInputComponent _cl_input_component(tmp);
+
+	_cl_input_component.handle_input();
 }
 catch (const std::exception& _exception)
 {

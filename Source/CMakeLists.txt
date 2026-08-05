@@ -1,4 +1,8 @@
-add_subdirectory(CLModule)
+add_subdirectory(CLParserComponent/CLParserAPI)
+add_subdirectory(CLParserComponent/CLParserModule)
+add_subdirectory(CLInputModule)
+
+# add_subdirectory(ApplicationCore)
 
 add_executable(${PROJECT_NAME}
         main.cpp
@@ -8,5 +12,6 @@ add_executable(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
         PRIVATE
-        CLModule
+        CLInputModule
+        CLParserModule
 )
