@@ -28,4 +28,4 @@ target_include_directories(${TESTS_MODULE_NAME}
         ${CMAKE_SOURCE_DIR}/Source/CLParserComponent/CLParserModule/Private/Tokenizer
 )
 
-add_subdirectory(CLModuleTests)
+add_subdirectory(CLParserComponentTests)
