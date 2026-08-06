@@ -13,6 +13,9 @@ target_sources(${MODULE_NAME}
         # Tokenizer
         Private/Tokenizer/CLTokenizer.h
         Private/Tokenizer/CLTokenizer.cpp
+        # Parser
+        Private/Parser/CLParser.h
+        Private/Parser/CLParser.cpp
 )
 
 target_link_libraries(${MODULE_NAME}
@@ -22,4 +25,5 @@ target_include_directories(${MODULE_NAME}
         PUBLIC Public
         PRIVATE Private
         PRIVATE Private/Tokenizer
+        PRIVATE Private/Parser
 )

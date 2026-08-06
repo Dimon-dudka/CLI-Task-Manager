@@ -11,8 +11,7 @@ try
 {
 	const CLParserModule _cl_parser;
 
-	const auto tmp = _cl_parser.get_input_port();
-	CLInputComponent _cl_input_component(tmp);
+	CLInputComponent _cl_input_component(_cl_parser.get_input_port());
 
 	_cl_input_component.handle_input();
 }
