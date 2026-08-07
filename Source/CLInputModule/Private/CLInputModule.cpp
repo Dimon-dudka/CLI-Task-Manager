@@ -44,6 +44,8 @@ void CLInputComponent::handle_work_result(const ParserResultHandle& _parser_resu
 	switch (_parser_result._result_status)
 	{
 		case ParserResultStatus::SUCCESS:
+			[[fallthrough]];
+		case ParserResultStatus::EMPTY_COMMAND:
 		{
 			return;
 		}
