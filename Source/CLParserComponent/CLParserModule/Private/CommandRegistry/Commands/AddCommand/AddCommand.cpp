@@ -8,5 +8,8 @@ const CommandMeta& AddCommand::get_command_meta() const
 CommandResult AddCommand::execute(const CLParsedCommand& _in_parsed_command) const
 {
 	CommandResult _result;
+
+	// TODO add a public core contract filling
+
 	return _result;
 }

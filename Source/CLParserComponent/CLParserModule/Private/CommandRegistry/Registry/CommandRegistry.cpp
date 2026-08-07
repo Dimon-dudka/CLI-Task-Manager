@@ -11,7 +11,7 @@ CommandRegistry::CommandRegistry()
 void CommandRegistry::register_command(std::unique_ptr<IBaseCommand> _in_new_command)
 {
 	assert(_in_new_command);
-	const auto _command_name = _in_new_command->get_command_meta().name;
+	const auto _command_name = _in_new_command->get_command_meta()._name;
 
 	if (const auto [_, _emplace_status] = _registered_commands.try_emplace(_command_name, std::move(_in_new_command));
 		_emplace_status != true)

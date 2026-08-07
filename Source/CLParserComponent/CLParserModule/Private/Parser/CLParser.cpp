@@ -50,7 +50,7 @@ ParserResultHandle CLParser::handle_dirty_command(const std::string& _in_dirty_s
 
 	CLParsedCommand _parsed_command;
 	_parsed_command._found_command = _command_ptr;
-	_parsed_command._matched_command_name = _command_ptr->get_command_meta().name;
+	_parsed_command._matched_command_name = _command_ptr->get_command_meta()._name;
 
 	try
 	{
@@ -88,7 +88,7 @@ std::optional<std::pair<const IBaseCommand*, size_t>> CLParser::find_longest_mat
 	for (const IBaseCommand* _command : _all_commands)
 	{
 		assert(_command);
-		const std::string& _command_name = _command->get_command_meta().name;
+		const std::string& _command_name = _command->get_command_meta()._name;
 
 		std::vector<std::string> _command_name_tokens;
 

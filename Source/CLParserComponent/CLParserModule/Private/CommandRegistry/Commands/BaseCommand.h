@@ -1,10 +1,12 @@
 #pragma once
 
+#include <optional>
 #include <string>
-
+#include <vector>
 
 
 struct CLParsedCommand;
+
 enum class CommandResult
 {
 	NONE,
@@ -12,12 +14,25 @@ enum class CommandResult
 	FAILURE,
 };
 
+struct CommandOptionMeta
+{
+	std::string _long_name;
+	std::string _description;
+
+	std::optional<char> _short_name;
+
+	bool _requires_value = false;
+	bool _required = false;
+};
+
 struct CommandMeta
 {
 	//-Variables-----------------------------------
-	std::string name;
-	std::string description;
-	std::string usage_example;
+	std::string _name;
+	std::string _description;
+	std::string _usage_example;
+
+	std::vector<CommandOptionMeta> _options;
 };
 
 class IBaseCommand
