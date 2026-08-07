@@ -11,7 +11,7 @@ CLParserModule::CLParserModule()
 	_primary_port = std::make_shared<CLParser>();
 }
 
-std::shared_ptr<ICLParserInput> CLParserModule::get_input_port() const
+std::shared_ptr<IParserBase> CLParserModule::get_input_port() const
 {
 	assert(_primary_port);
 	return _primary_port;

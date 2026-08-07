@@ -11,7 +11,7 @@ class CLTokenizer
 	//-Lifecycle-----------------------------------
 	//-Methods-------------------------------------
 public:
-	[[nodiscard]] std::vector<std::string> tokenize(const std::string_view& _in_string);
+	[[nodiscard]] std::vector<std::string> tokenize(const std::string& _in_string);
 
 	//-Variables-----------------------------------
 };

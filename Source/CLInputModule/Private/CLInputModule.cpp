@@ -1,15 +1,14 @@
 module;
 
 #include "CLReader.h"
+#include "ParserBase.h"
 #include <cassert>
 #include <iostream>
 #include <memory>
 
-import CLParserAPI;
-
 module CLInputModule;
 
-CLInputComponent::CLInputComponent(const std::shared_ptr<ICLParserInput>& _in_new_parser_input)
+CLInputComponent::CLInputComponent(const std::shared_ptr<IParserBase>& _in_new_parser_input)
 	: _parser_adapter(_in_new_parser_input)
 {
 	_input_reader = std::make_unique<CLReader>();
@@ -40,32 +39,37 @@ void CLInputComponent::handle_input()
 	}
 }
 
-void CLInputComponent::handle_work_result(const CLParserResultHandle& _parser_result)
+void CLInputComponent::handle_work_result(const ParserResultHandle& _parser_result)
 {
 	switch (_parser_result._result_status)
 	{
-		case CLParserResultStatus::SUCCESS:
+		case ParserResultStatus::SUCCESS:
 		{
 			return;
 		}
-		case CLParserResultStatus::INVALID_SYNTAX:
+		case ParserResultStatus::INVALID_SYNTAX:
 		{
 			std::cout << "Invalid syntax detected: " << _parser_result._result_message << std::endl;
+			break;
 		}
-		case CLParserResultStatus::CORE_ERROR:
+		case ParserResultStatus::CORE_ERROR:
 		{
 			std::cout << "Error by executing user request: " << _parser_result._result_message << std::endl;
 		}
-		case CLParserResultStatus::EXIT:
+		case ParserResultStatus::EXIT:
 		{
 			_is_reading = false;
+			break;
 		}
+		case ParserResultStatus::NONE:
+			[[fallthrough]];
 		default:
 		{
 			// TODO think about another way
 			assert(false);
 			_is_reading = false;
 			throw std::runtime_error("Unknown result status");
+			break;
 		}
 	}
 }

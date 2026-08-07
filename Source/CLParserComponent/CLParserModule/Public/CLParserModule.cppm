@@ -1,18 +1,18 @@
 module;
 
+#include "ParserBase.h"
 #include <memory>
 
 export module CLParserModule;
 
-import CLParserAPI;
-
 export class CLParserModule
 {
 public:
+	// TODO Add pointer to appcore port
 	CLParserModule();
 
-	[[nodiscard]] std::shared_ptr<ICLParserInput> get_input_port() const;
+	[[nodiscard]] std::shared_ptr<IParserBase> get_input_port() const;
 
 private:
-	std::shared_ptr<ICLParserInput> _primary_port;
+	std::shared_ptr<IParserBase> _primary_port;
 };

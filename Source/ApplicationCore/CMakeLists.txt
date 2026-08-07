@@ -2,17 +2,13 @@ set(MODULE_NAME "ApplicationCore")
 
 add_library(${MODULE_NAME} SHARED)
 
-target_sources(${MODULE_NAME}
-        PUBLIC
-        FILE_SET cl_module
-        TYPE CXX_MODULES FILES
-        Public/ApplicationCore.cppm
-
-        PRIVATE
-        Private/ApplicationCore.cpp
-)
+add_subdirectory(Public/ApplicationAPI)
+add_subdirectory(Public/ApplicationCoreModule)
 
 target_include_directories(${MODULE_NAME}
-        PUBLIC Public
-        PRIVATE Private
+        PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/Public
+
+        PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/Private
 )

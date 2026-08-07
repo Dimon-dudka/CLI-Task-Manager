@@ -1,8 +1,6 @@
-add_subdirectory(CLParserComponent/CLParserAPI)
 add_subdirectory(CLParserComponent/CLParserModule)
 add_subdirectory(CLInputModule)
-
-# add_subdirectory(ApplicationCore)
+add_subdirectory(ApplicationCore)
 
 add_executable(${PROJECT_NAME}
         main.cpp

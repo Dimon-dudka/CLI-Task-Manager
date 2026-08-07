@@ -1,4 +1,3 @@
-
 #include "CLTokenizer.h"
 
 namespace
@@ -6,7 +5,7 @@ namespace
 	constexpr int _init_res_vec_size = 5;
 }
 
-std::vector<std::string> CLTokenizer::tokenize(const std::string_view& _in_string)
+std::vector<std::string> CLTokenizer::tokenize(const std::string& _in_string)
 {
 	std::vector<std::string> _result;
 	_result.reserve(_init_res_vec_size);

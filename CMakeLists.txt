@@ -11,7 +11,7 @@ set(ENABLE_TESTS TRUE)
 
 if (ENABLE_TESTS)
     message(DEBUG "${CMAKE_BUILD_LOG_PREFIX} ENABLE_TESTS = ${ENABLE_TESTS}, using testing environment")
-    add_compile_definitions(ENABLE_TESTS)
+    add_compile_definitions(TESTS_ENABLED)
 endif ()
 
 add_subdirectory(Source)
